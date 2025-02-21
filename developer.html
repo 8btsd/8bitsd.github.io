@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沈 - 开发者入口</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="projects.html">我的项目</a></li>
+                <li><a href="payment.html">支付下载</a></li>
+                <li><a href="contact.html">联系我</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>开发者入口</h1>
+        <p>请输入密码以访问管理面板：</p>
+        <input type="password" id="devPassword" placeholder="输入密码">
+        <button onclick="checkDevPassword()">提交</button>
+        <div id="devPanel" style="display: none;">
+            <h2>管理商品价格和下载</h2>
+            <p>当前价格（单位：元）：</p>
+            <ul>
+                <li>基础版：<span id="basicPrice">20</span> 元</li>
+                <li>高级版：<span id="premiumPrice">128</span> 元</li>
+            </ul>
+            <p>修改价格：</p>
+            <input type="number" id="newBasicPrice" placeholder="输入基础版价格" min="1">
+            <button onclick="updatePrice('basic', document.getElementById('newBasicPrice').value)">保存基础版</button>
+            <br><br>
+            <input type="number" id="newPremiumPrice" placeholder="输入高级版价格" min="1">
+            <button onclick="updatePrice('premium', document.getElementById('newPremiumPrice').value)">保存高级版</button>
+            <p>当前下载密码：<span id="downloadPasswordDisplay">ShenPay2025!</span></p>
+            <p>修改下载密码：</p>
+            <input type="text" id="newDownloadPassword" placeholder="输入新密码">
+            <button onclick="updateDownloadPassword(document.getElementById('newDownloadPassword').value)">保存下载密码</button>
+            <p>注意：价格和密码保存到本地存储，请手动更新网站代码以同步显示。</p>
+        </div>
+        <p id="errorMsg" style="color: red;"></p>
+    </main>
+    <footer>
+        <p>© 2025 沈。保留所有权利。</p>
+    </footer>
+</body>
+</html>

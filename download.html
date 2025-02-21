@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沈 - 软件下载</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="projects.html">我的项目</a></li>
+                <li><a href="payment.html">支付下载</a></li>
+                <li><a href="contact.html">联系我</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>软件下载</h1>
+        <p>请输入支付密码以下载软件（支付成功后我将提供密码）：</p>
+        <input type="password" id="downloadPassword" placeholder="输入支付密码">
+        <button onclick="checkDownloadPassword()">提交</button>
+        <div id="downloadLink" style="display: none;">
+            <h2>下载链接</h2>
+            <p>点击以下链接下载软件（Bilibili 下载工具）：</p>
+            <p><a href="files/bilibili-downloader-basic.exe" download>下载 Bilibili 下载工具</a></p>
+            <p>注意：下载链接有效期 24 小时，请尽快下载。基础版用户获得基本功能（720p、单视频），高级版用户可联系我获取技术支持和优先更新。</p>
+        </div>
+        <p id="downloadError" style="color: red;"></p>
+    </main>
+    <footer>
+        <p>© 2025 沈。保留所有权利。</p>
+    </footer>
+</body>
+</html>
